@@ -20,7 +20,7 @@ def scrape_website(website):
 
     try:
         driver.get(website)
-        print("Navigated! Scraping page content...")
+        print("success")
 
         # Retrieve and return the page source
         html = driver.page_source

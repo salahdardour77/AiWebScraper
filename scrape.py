@@ -9,11 +9,8 @@ from selenium.webdriver.firefox.service import Service
 def scrape_website(website):
     print("Connecting to Scraping Browser...")
 
-    # Set up Firefox options (similar to Chrome options)
     options = FirefoxOptions()
-    options.headless = True  # Run in headless mode if needed
-
-    # Initialize Firefox WebDriver instead of Chrome
+    options.headless = True  
     driver_path = "./geckodriver.exe"
     service = Service(executable_path=driver_path)
     driver = Firefox(service=service, options=options)
@@ -22,12 +19,11 @@ def scrape_website(website):
         driver.get(website)
         print("success")
 
-        # Retrieve and return the page source
+
         html = driver.page_source
         return html
 
     finally:
-        # Ensure the browser is closed
         driver.quit()
 
 
